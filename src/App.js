@@ -10,7 +10,7 @@ marked.setOptions({
   breaks: true,
 });
 
-const placeholder = `# Welcome to my React Markdown Previewer!
+const placeholder = `# This is a heading
 
 ## This is a sub-heading...
 ### And here's some other cool stuff:
@@ -68,7 +68,17 @@ class App extends Component {
 
   render() {
     return (
-      <Container>
+      <Container
+        style={{
+          display: "flex",
+          flexWrap: "wrap",
+          margin: "auto",
+          justifyContent: "space-around",
+        }}
+      >
+        <h1 style={{ width: "100%", textAlign: "center" }}>
+          Welcome to my React Markdown Previewer!
+        </h1>
         <Editor editorText={this.state.text} />
         <Previewer previewText={this.state.text} />
       </Container>
