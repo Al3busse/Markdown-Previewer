@@ -1,11 +1,10 @@
 import React from "react";
-import "./Editor.css";
 import { Row } from "react-bootstrap";
 import { Col } from "react-bootstrap";
 
 const Editor = (props) => {
   return (
-    <Col sm={6} xs={12}>
+    <Col xs={12} sm={12} md={6}>
       <Row
         style={{
           position: "relative",
@@ -14,16 +13,31 @@ const Editor = (props) => {
         }}
       >
         <h2 style={{ margin: "auto auto auto 5px" }}>Editor</h2>
-        <button style={{ margin: "auto 15px auto auto" }}>Clear</button>
+        <button
+          onClick={props.resetButton}
+          style={{ margin: "auto 1px auto auto" }}
+        >
+          Reset
+        </button>
+        <button
+          onClick={props.clearButton}
+          style={{ margin: "auto 15px auto 1px" }}
+        >
+          Clear
+        </button>
       </Row>
 
       <textarea
-        style={{ minHeight: "88vh", minWidth: "50%", overflowY: "visible" }}
+        style={{
+          minHeight: "88vh",
+          minWidth: "50%",
+          overflowY: "visible",
+          width: "100%",
+        }}
         id='editor'
         onChange={props.onChange}
-      >
-        {props.editorText}
-      </textarea>
+        value={props.placeHolder}
+      ></textarea>
     </Col>
   );
 };

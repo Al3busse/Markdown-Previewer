@@ -11,7 +11,7 @@ marked.setOptions({
 
 const Previewer = (props) => {
   return (
-    <Col sm={6} xs={12} style={{ border: "2px solid black", padding: "0px" }}>
+    <Col style={{ border: "2px solid black", padding: "0px" }}>
       <Row
         style={{
           position: "relative",
@@ -22,7 +22,7 @@ const Previewer = (props) => {
         <h2 style={{ margin: "auto auto auto 5px" }}>Preview</h2>
       </Row>
       <div
-        style={{ overflowX: "scroll", padding: "0px 15px 0px 15px" }}
+        style={{ overflowX: "auto", padding: "0px 15px 0px 15px" }}
         id='preview'
         dangerouslySetInnerHTML={{
           __html: marked(props.previewText),

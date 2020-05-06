@@ -65,6 +65,16 @@ class App extends Component {
       text: placeholder,
     };
     this.handleChange = this.handleChange.bind(this);
+    this.clearEditor = this.clearEditor.bind(this);
+    this.resetEditor = this.resetEditor.bind(this);
+  }
+
+  clearEditor() {
+    this.setState({ text: "" });
+  }
+
+  resetEditor() {
+    this.setState({ text: placeholder });
   }
 
   handleChange(e) {
@@ -86,7 +96,12 @@ class App extends Component {
         <h1 style={{ width: "100%", textAlign: "center" }}>
           Welcome to my React Markdown Previewer!
         </h1>
-        <Editor editorText={this.state.text} onChange={this.handleChange} />
+        <Editor
+          placeHolder={this.state.text}
+          onChange={this.handleChange}
+          clearButton={this.clearEditor}
+          resetButton={this.resetEditor}
+        />
         <Previewer previewText={this.state.text} />
       </Container>
     );
