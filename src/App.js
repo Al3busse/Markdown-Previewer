@@ -64,6 +64,13 @@ class App extends Component {
     this.state = {
       text: placeholder,
     };
+    this.handleChange = this.handleChange.bind(this);
+  }
+
+  handleChange(e) {
+    this.setState({
+      text: e.target.value,
+    });
   }
 
   render() {
@@ -79,7 +86,7 @@ class App extends Component {
         <h1 style={{ width: "100%", textAlign: "center" }}>
           Welcome to my React Markdown Previewer!
         </h1>
-        <Editor editorText={this.state.text} />
+        <Editor editorText={this.state.text} onChange={this.handleChange} />
         <Previewer previewText={this.state.text} />
       </Container>
     );

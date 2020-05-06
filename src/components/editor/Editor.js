@@ -20,6 +20,7 @@ const Editor = (props) => {
       <textarea
         style={{ minHeight: "88vh", minWidth: "50%", overflowY: "visible" }}
         id='editor'
+        onChange={props.onChange}
       >
         {props.editorText}
       </textarea>
